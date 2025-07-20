@@ -23,7 +23,7 @@ class LearningTracker {
                         name: "Housing in Mexico",
                         skills: ["Python basics", "Data visualization", "Correlation analysis", "CSV data handling"],
                         hours: 12,
-                        completed: false
+                        completed: True
                     },
                     mscfe_course: {
                         name: "Financial Markets (Week 1)",
