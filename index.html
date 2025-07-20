@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantitative Finance Learning Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="app-title">Quantitative Finance Learning Tracker</h1>
+                    <div class="header-controls">
+                        <button id="themeToggle" class="btn btn--outline btn--sm">🌙</button>
+                        <button id="exportData" class="btn btn--primary btn--sm">Export Data</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs">
+            <div class="container">
+                <div class="tab-list">
+                    <button class="tab-button active" data-tab="overview">Overview</button>
+                    <button class="tab-button" data-tab="monthly">Monthly Plan</button>
+                    <button class="tab-button" data-tab="habits">Daily Habits</button>
+                    <button class="tab-button" data-tab="skills">Skills</button>
+                    <button class="tab-button" data-tab="techniques">Techniques</button>
+                    <button class="tab-button" data-tab="resources">Resources</button>
+                    <button class="tab-button" data-tab="analytics">Analytics</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Overview Tab -->
+                <div id="overview" class="tab-content active">
+                    <div class="overview-grid">
+                        <div class="card progress-card">
+                            <div class="card__body">
+                                <h3>Current Progress</h3>
+                                <div class="progress-info">
+                                    <div class="month-indicator">
+                                        <span class="current-month">Month 1</span>
+                                        <span class="total-months">of 9</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-progress="11"></div>
+                                    </div>
+                                    <span class="progress-text">11% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card hours-card">
+                            <div class="card__body">
+                                <h3>Weekly Hours</h3>
+                                <div class="hours-progress">
+                                    <div class="hours-bar">
+                                        <div class="hours-target">
+                                            <span>Target: 25h/week</span>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" data-progress="68"></div>
+                                            </div>
+                                        </div>
+                                        <div class="hours-actual">
+                                            <span>Actual: 17h/week</span>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" data-progress="68"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card streak-card">
+                            <div class="card__body">
+                                <h3>Current Streak</h3>
+                                <div class="streak-counter">
+                                    <span class="streak-number">7</span>
+                                    <span class="streak-label">Days</span>
+                                </div>
+                                <div class="streak-visual">
+                                    <div class="streak-dots">
+                                        <span class="dot active"></span>
+                                        <span class="dot active"></span>
+                                        <span class="dot active"></span>
+                                        <span class="dot active"></span>
+                                        <span class="dot active"></span>
+                                        <span class="dot active"></span>
+                                        <span class="dot active"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card learning-tracks">
+                            <div class="card__body">
+                                <h3>Learning Tracks Progress</h3>
+                                <div class="track-list">
+                                    <div class="track-item">
+                                        <span class="track-name">WQU Data Science Lab</span>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" data-progress="33"></div>
+                                        </div>
+                                        <span class="track-percent">33%</span>
+                                    </div>
+                                    <div class="track-item">
+                                        <span class="track-name">MScFE Coursework</span>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" data-progress="22"></div>
+                                        </div>
+                                        <span class="track-percent">22%</span>
+                                    </div>
+                                    <div class="track-item">
+                                        <span class="track-name">Udemy ML/NLP</span>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" data-progress="44"></div>
+                                        </div>
+                                        <span class="track-percent">44%</span>
+                                    </div>
+                                    <div class="track-item">
+                                        <span class="track-name">Additional Reading</span>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" data-progress="18"></div>
+                                        </div>
+                                        <span class="track-percent">18%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-section">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Learning Timeline Overview</h3>
+                                <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/388381102c549884c97797de14c749c0/1bb81272-2eb8-4dfe-a303-e2138533a15e/70f06bea.png" alt="9-Month Quantitative Finance Learning Timeline" class="timeline-chart">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monthly Plan Tab -->
+                <div id="monthly" class="tab-content">
+                    <div class="monthly-nav">
+                        <div class="month-tabs">
+                            <button class="month-tab active" data-month="0">Aug 2025</button>
+                            <button class="month-tab" data-month="1">Sep 2025</button>
+                            <button class="month-tab" data-month="2">Oct 2025</button>
+                            <button class="month-tab" data-month="3">Nov 2025</button>
+                            <button class="month-tab" data-month="4">Dec 2025</button>
+                            <button class="month-tab" data-month="5">Jan 2026</button>
+                            <button class="month-tab" data-month="6">Feb 2026</button>
+                            <button class="month-tab" data-month="7">Mar 2026</button>
+                            <button class="month-tab" data-month="8">Apr 2026</button>
+                        </div>
+                    </div>
+
+                    <div class="month-content">
+                        <div class="month-panel active" data-month="0">
+                            <h2>Month 1 (Aug 2025): WQU Data Science Lab Project 1 + Financial Markets Foundation</h2>
+                            
+                            <div class="learning-tracks-grid">
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h3>🎯 WQU Data Science Lab Project</h3>
+                                        <h4>Housing in Mexico</h4>
+                                        <p><strong>Skills:</strong> Python basics, Data visualization, Correlation analysis, CSV data handling</p>
+                                        <p><strong>Target Hours:</strong> 12</p>
+                                        <div class="completion-checkbox">
+                                            <label class="checkbox-container">
+                                                <input type="checkbox" data-track="wqu" data-month="0">
+                                                <span class="checkmark"></span>
+                                                Project Completed
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h3>📚 MScFE Course</h3>
+                                        <h4>Financial Markets (Week 1)</h4>
+                                        <ul>
+                                            <li>Introduction to Financial Markets</li>
+                                            <li>Market Regulation</li>
+                                            <li>Interest and Money Markets</li>
+                                        </ul>
+                                        <p><strong>Target Hours:</strong> 4</p>
+                                        <div class="progress-slider">
+                                            <input type="range" min="0" max="100" value="0" data-track="mscfe" data-month="0">
+                                            <span class="slider-value">0%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h3>🖥️ Udemy ML/NLP Topics</h3>
+                                        <div class="topic-checklist">
+                                            <label class="checkbox-container">
+                                                <input type="checkbox" data-track="udemy" data-month="0" data-topic="0">
+                                                <span class="checkmark"></span>
+                                                Python basics for ML
+                                            </label>
+                                            <label class="checkbox-container">
+                                                <input type="checkbox" data-track="udemy" data-month="0" data-topic="1">
+                                                <span class="checkmark"></span>
+                                                NumPy and Pandas fundamentals
+                                            </label>
+                                            <label class="checkbox-container">
+                                                <input type="checkbox" data-track="udemy" data-month="0" data-topic="2">
+                                                <span class="checkmark"></span>
+                                                Data preprocessing for financial data
+                                            </label>
+                                            <label class="checkbox-container">
+                                                <input type="checkbox" data-track="udemy" data-month="0" data-topic="3">
+                                                <span class="checkmark"></span>
+                                                Basic statistics for ML
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h3>📖 Additional Content</h3>
+                                        <h4>Quantitative Finance Fundamentals</h4>
+                                        <ul>
+                                            <li>Financial instruments overview</li>
+                                            <li>Time value of money basics</li>
+                                            <li>Introduction to Python for finance</li>
+                                        </ul>
+                                        <p><strong>Target Hours:</strong> 4</p>
+                                        <div class="progress-slider">
+                                            <input type="range" min="0" max="100" value="0" data-track="additional" data-month="0">
+                                            <span class="slider-value">0%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="time-logging">
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h3>⏱️ Time Logging</h3>
+                                        <div class="time-inputs">
+                                            <div class="time-input">
+                                                <label>WQU Project Hours:</label>
+                                                <input type="number" min="0" step="0.5" data-time-track="wqu" data-month="0">
+                                            </div>
+                                            <div class="time-input">
+                                                <label>MScFE Study Hours:</label>
+                                                <input type="number" min="0" step="0.5" data-time-track="mscfe" data-month="0">
+                                            </div>
+                                            <div class="time-input">
+                                                <label>Udemy Hours:</label>
+                                                <input type="number" min="0" step="0.5" data-time-track="udemy" data-month="0">
+                                            </div>
+                                            <div class="time-input">
+                                                <label>Additional Hours:</label>
+                                                <input type="number" min="0" step="0.5" data-time-track="additional" data-month="0">
+                                            </div>
+                                        </div>
+                                        <div class="total-hours">
+                                            <strong>Total Hours: <span data-total-month="0">0</span> / 23</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Habits Tab -->
+                <div id="habits" class="tab-content">
+                    <div class="habits-header">
+                        <h2>Daily Habit Tracker</h2>
+                        <div class="date-picker">
+                            <input type="date" id="habitDate" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="habits-grid">
+                        <div class="card habits-checklist">
+                            <div class="card__body">
+                                <h3>Today's Habits</h3>
+                                <div class="habit-list">
+                                    <div class="habit-item">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-habit="0">
+                                            <span class="checkmark"></span>
+                                            Morning market news
+                                        </label>
+                                        <div class="time-tracker">
+                                            <input type="number" min="0" max="60" placeholder="30" data-habit-time="0">
+                                            <span>min</span>
+                                        </div>
+                                    </div>
+                                    <div class="habit-item">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-habit="1">
+                                            <span class="checkmark"></span>
+                                            WQU project work
+                                        </label>
+                                        <div class="time-tracker">
+                                            <input type="number" min="0" max="120" placeholder="60" data-habit-time="1">
+                                            <span>min</span>
+                                        </div>
+                                    </div>
+                                    <div class="habit-item">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-habit="2">
+                                            <span class="checkmark"></span>
+                                            MScFE study
+                                        </label>
+                                        <div class="time-tracker">
+                                            <input type="number" min="0" max="90" placeholder="45" data-habit-time="2">
+                                            <span>min</span>
+                                        </div>
+                                    </div>
+                                    <div class="habit-item">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-habit="3">
+                                            <span class="checkmark"></span>
+                                            Udemy ML/NLP content
+                                        </label>
+                                        <div class="time-tracker">
+                                            <input type="number" min="0" max="60" placeholder="30" data-habit-time="3">
+                                            <span>min</span>
+                                        </div>
+                                    </div>
+                                    <div class="habit-item">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-habit="4">
+                                            <span class="checkmark"></span>
+                                            Additional reading
+                                        </label>
+                                        <div class="time-tracker">
+                                            <input type="number" min="0" max="60" placeholder="30" data-habit-time="4">
+                                            <span>min</span>
+                                        </div>
+                                    </div>
+                                    <div class="habit-item">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-habit="5">
+                                            <span class="checkmark"></span>
+                                            Progress logging
+                                        </label>
+                                        <div class="time-tracker">
+                                            <input type="number" min="0" max="30" placeholder="15" data-habit-time="5">
+                                            <span>min</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card calendar-view">
+                            <div class="card__body">
+                                <h3>Habit Calendar</h3>
+                                <div class="calendar" id="habitCalendar">
+                                    <!-- Calendar will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Tab -->
+                <div id="skills" class="tab-content">
+                    <h2>Skills Progression</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Python Programming</h3>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Basic Python Syntax</span>
+                                    <span class="skill-target">Target: Month 1</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-skill="0" data-level="0"></div>
+                                    </div>
+                                    <div class="skill-controls">
+                                        <button class="btn btn--sm skill-btn" data-action="decrease" data-skill="0">-</button>
+                                        <span class="skill-level">0/5</span>
+                                        <button class="btn btn--sm skill-btn" data-action="increase" data-skill="0">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Pandas Data Manipulation</span>
+                                    <span class="skill-target">Target: Month 1</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-skill="1" data-level="0"></div>
+                                    </div>
+                                    <div class="skill-controls">
+                                        <button class="btn btn--sm skill-btn" data-action="decrease" data-skill="1">-</button>
+                                        <span class="skill-level">0/4</span>
+                                        <button class="btn btn--sm skill-btn" data-action="increase" data-skill="1">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Machine Learning</h3>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Linear Regression</span>
+                                    <span class="skill-target">Target: Month 2</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-skill="2" data-level="0"></div>
+                                    </div>
+                                    <div class="skill-controls">
+                                        <button class="btn btn--sm skill-btn" data-action="decrease" data-skill="2">-</button>
+                                        <span class="skill-level">0/5</span>
+                                        <button class="btn btn--sm skill-btn" data-action="increase" data-skill="2">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Time Series Analysis</span>
+                                    <span class="skill-target">Target: Month 3</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-skill="3" data-level="0"></div>
+                                    </div>
+                                    <div class="skill-controls">
+                                        <button class="btn btn--sm skill-btn" data-action="decrease" data-skill="3">-</button>
+                                        <span class="skill-level">0/5</span>
+                                        <button class="btn btn--sm skill-btn" data-action="increase" data-skill="3">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Financial Theory</h3>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Financial Markets Understanding</span>
+                                    <span class="skill-target">Target: Month 2</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-skill="4" data-level="0"></div>
+                                    </div>
+                                    <div class="skill-controls">
+                                        <button class="btn btn--sm skill-btn" data-action="decrease" data-skill="4">-</button>
+                                        <span class="skill-level">0/5</span>
+                                        <button class="btn btn--sm skill-btn" data-action="increase" data-skill="4">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Portfolio Theory</span>
+                                    <span class="skill-target">Target: Month 5</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-skill="5" data-level="0"></div>
+                                    </div>
+                                    <div class="skill-controls">
+                                        <button class="btn btn--sm skill-btn" data-action="decrease" data-skill="5">-</button>
+                                        <span class="skill-level">0/5</span>
+                                        <button class="btn btn--sm skill-btn" data-action="increase" data-skill="5">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Techniques Tab -->
+                <div id="techniques" class="tab-content">
+                    <h2>Learning Techniques Guide</h2>
+                    <div class="techniques-grid">
+                        <div class="card technique-card">
+                            <div class="card__body">
+                                <h3>Active Recall</h3>
+                                <div class="technique-meta">
+                                    <span class="effectiveness high">Very High Effectiveness</span>
+                                    <span class="frequency">Daily, 15-20 minutes</span>
+                                </div>
+                                <p>Testing yourself without looking at answers first</p>
+                                <div class="implementation">
+                                    <h4>Implementation:</h4>
+                                    <ul>
+                                        <li>Close your notes and write down what you remember</li>
+                                        <li>Use flashcards for key concepts</li>
+                                        <li>Practice explaining without referring to materials</li>
+                                    </ul>
+                                </div>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-technique="0">
+                                    <span class="checkmark"></span>
+                                    Implemented in daily routine
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="card technique-card">
+                            <div class="card__body">
+                                <h3>Spaced Repetition</h3>
+                                <div class="technique-meta">
+                                    <span class="effectiveness high">Very High Effectiveness</span>
+                                    <span class="frequency">Daily review, weekly comprehensive</span>
+                                </div>
+                                <p>Reviewing material at increasing intervals</p>
+                                <div class="implementation">
+                                    <h4>Implementation:</h4>
+                                    <ul>
+                                        <li>Review new material after 1 day, then 3 days, then 1 week</li>
+                                        <li>Use apps like Anki for systematic scheduling</li>
+                                        <li>Focus on concepts that are harder to remember</li>
+                                    </ul>
+                                </div>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-technique="1">
+                                    <span class="checkmark"></span>
+                                    Implemented in daily routine
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="card technique-card">
+                            <div class="card__body">
+                                <h3>Feynman Technique</h3>
+                                <div class="technique-meta">
+                                    <span class="effectiveness medium">High Effectiveness</span>
+                                    <span class="frequency">Weekly for major concepts</span>
+                                </div>
+                                <p>Explaining concepts in simple terms</p>
+                                <div class="implementation">
+                                    <h4>Implementation:</h4>
+                                    <ul>
+                                        <li>Choose a concept and explain it in simple terms</li>
+                                        <li>Identify gaps in your understanding</li>
+                                        <li>Go back to source material to fill gaps</li>
+                                        <li>Simplify language and use analogies</li>
+                                    </ul>
+                                </div>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-technique="2">
+                                    <span class="checkmark"></span>
+                                    Implemented in daily routine
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="card technique-card">
+                            <div class="card__body">
+                                <h3>Pomodoro Technique</h3>
+                                <div class="technique-meta">
+                                    <span class="effectiveness medium">High Effectiveness</span>
+                                    <span class="frequency">Throughout daily study sessions</span>
+                                </div>
+                                <p>25-minute focused work sessions with breaks</p>
+                                <div class="implementation">
+                                    <h4>Implementation:</h4>
+                                    <ul>
+                                        <li>Set a timer for 25 minutes of focused work</li>
+                                        <li>Take a 5-minute break after each session</li>
+                                        <li>Take a longer 15-30 minute break after 4 sessions</li>
+                                        <li>Track completed pomodoros</li>
+                                    </ul>
+                                </div>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-technique="3">
+                                    <span class="checkmark"></span>
+                                    Implemented in daily routine
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resources Tab -->
+                <div id="resources" class="tab-content">
+                    <h2>Resource Library</h2>
+                    <div class="resources-grid">
+                        <div class="card resource-card">
+                            <div class="card__body">
+                                <h3>Hull - Options, Futures, and Other Derivatives</h3>
+                                <div class="resource-meta">
+                                    <span class="priority high">High Priority</span>
+                                    <span class="pages">800 pages • 20 chapters</span>
+                                </div>
+                                <div class="reading-progress">
+                                    <div class="progress-info">
+                                        <span>Pages Read:</span>
+                                        <div class="page-input">
+                                            <input type="number" min="0" max="800" value="0" data-resource="0" data-type="pages">
+                                            <span>/ 800</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-resource-progress="0"></div>
+                                    </div>
+                                </div>
+                                <div class="chapter-checklist">
+                                    <h4>Chapters (1-5):</h4>
+                                    <div class="chapter-grid">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="0" data-chapter="0">
+                                            <span class="checkmark"></span>
+                                            Ch 1
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="0" data-chapter="1">
+                                            <span class="checkmark"></span>
+                                            Ch 2
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="0" data-chapter="2">
+                                            <span class="checkmark"></span>
+                                            Ch 3
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="0" data-chapter="3">
+                                            <span class="checkmark"></span>
+                                            Ch 4
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="0" data-chapter="4">
+                                            <span class="checkmark"></span>
+                                            Ch 5
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <label>Rating:</label>
+                                    <div class="stars" data-resource="0">
+                                        <span class="star" data-rating="1">⭐</span>
+                                        <span class="star" data-rating="2">⭐</span>
+                                        <span class="star" data-rating="3">⭐</span>
+                                        <span class="star" data-rating="4">⭐</span>
+                                        <span class="star" data-rating="5">⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card resource-card">
+                            <div class="card__body">
+                                <h3>Python for Finance - Yves Hilpisch</h3>
+                                <div class="resource-meta">
+                                    <span class="priority high">High Priority</span>
+                                    <span class="pages">600 pages • 18 chapters</span>
+                                </div>
+                                <div class="reading-progress">
+                                    <div class="progress-info">
+                                        <span>Pages Read:</span>
+                                        <div class="page-input">
+                                            <input type="number" min="0" max="600" value="0" data-resource="1" data-type="pages">
+                                            <span>/ 600</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-resource-progress="1"></div>
+                                    </div>
+                                </div>
+                                <div class="chapter-checklist">
+                                    <h4>Chapters (1-5):</h4>
+                                    <div class="chapter-grid">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="1" data-chapter="0">
+                                            <span class="checkmark"></span>
+                                            Ch 1
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="1" data-chapter="1">
+                                            <span class="checkmark"></span>
+                                            Ch 2
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="1" data-chapter="2">
+                                            <span class="checkmark"></span>
+                                            Ch 3
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="1" data-chapter="3">
+                                            <span class="checkmark"></span>
+                                            Ch 4
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="1" data-chapter="4">
+                                            <span class="checkmark"></span>
+                                            Ch 5
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <label>Rating:</label>
+                                    <div class="stars" data-resource="1">
+                                        <span class="star" data-rating="1">⭐</span>
+                                        <span class="star" data-rating="2">⭐</span>
+                                        <span class="star" data-rating="3">⭐</span>
+                                        <span class="star" data-rating="4">⭐</span>
+                                        <span class="star" data-rating="5">⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card resource-card">
+                            <div class="card__body">
+                                <h3>Machine Learning for Algorithmic Trading - Jansen</h3>
+                                <div class="resource-meta">
+                                    <span class="priority high">High Priority</span>
+                                    <span class="pages">700 pages • 15 chapters</span>
+                                </div>
+                                <div class="reading-progress">
+                                    <div class="progress-info">
+                                        <span>Pages Read:</span>
+                                        <div class="page-input">
+                                            <input type="number" min="0" max="700" value="0" data-resource="2" data-type="pages">
+                                            <span>/ 700</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-resource-progress="2"></div>
+                                    </div>
+                                </div>
+                                <div class="chapter-checklist">
+                                    <h4>Chapters (1-5):</h4>
+                                    <div class="chapter-grid">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="2" data-chapter="0">
+                                            <span class="checkmark"></span>
+                                            Ch 1
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="2" data-chapter="1">
+                                            <span class="checkmark"></span>
+                                            Ch 2
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="2" data-chapter="2">
+                                            <span class="checkmark"></span>
+                                            Ch 3
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="2" data-chapter="3">
+                                            <span class="checkmark"></span>
+                                            Ch 4
+                                        </label>
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" data-resource="2" data-chapter="4">
+                                            <span class="checkmark"></span>
+                                            Ch 5
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <label>Rating:</label>
+                                    <div class="stars" data-resource="2">
+                                        <span class="star" data-rating="1">⭐</span>
+                                        <span class="star" data-rating="2">⭐</span>
+                                        <span class="star" data-rating="3">⭐</span>
+                                        <span class="star" data-rating="4">⭐</span>
+                                        <span class="star" data-rating="5">⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Tab -->
+                <div id="analytics" class="tab-content">
+                    <h2>Performance Analytics</h2>
+                    <div class="analytics-grid">
+                        <div class="card chart-card">
+                            <div class="card__body">
+                                <h3>Weekly Study Hours</h3>
+                                <div class="chart-container">
+                                    <canvas id="hoursChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card chart-card">
+                            <div class="card__body">
+                                <h3>Learning Track Progress</h3>
+                                <div class="chart-container">
+                                    <canvas id="trackChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card chart-card">
+                            <div class="card__body">
+                                <h3>Skills Development Over Time</h3>
+                                <div class="chart-container">
+                                    <canvas id="skillsChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card metrics-card">
+                            <div class="card__body">
+                                <h3>Habit Consistency</h3>
+                                <div class="metrics-grid">
+                                    <div class="metric">
+                                        <span class="metric-value">87%</span>
+                                        <span class="metric-label">Overall Consistency</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">23</span>
+                                        <span class="metric-label">Current Streak</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">156</span>
+                                        <span class="metric-label">Total Study Hours</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">4.2</span>
+                                        <span class="metric-label">Avg Daily Hours</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

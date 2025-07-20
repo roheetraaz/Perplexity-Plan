@@ -1,0 +1,28 @@
+Category,Skill,Target_Month,Current_Level,Target_Level,Completed
+Python Programming,Basic Python Syntax,1,0,5,False
+Python Programming,Pandas Data Manipulation,1,0,4,False
+Python Programming,NumPy Numerical Computing,2,0,4,False
+Python Programming,Matplotlib/Plotly Visualization,2,0,4,False
+Python Programming,Scikit-learn ML,3,0,4,False
+Machine Learning,Linear Regression,2,0,5,False
+Machine Learning,Logistic Regression,4,0,5,False
+Machine Learning,Decision Trees,4,0,4,False
+Machine Learning,Random Forests,5,0,4,False
+Machine Learning,Time Series Analysis,3,0,5,False
+Machine Learning,Neural Networks,7,0,4,False
+Machine Learning,Deep Learning,7,0,3,False
+Financial Theory,Financial Markets Understanding,2,0,5,False
+Financial Theory,Portfolio Theory,5,0,5,False
+Financial Theory,Options Pricing,7,0,5,False
+Financial Theory,Risk Management,8,0,5,False
+Financial Theory,Derivatives,7,0,4,False
+Financial Theory,Algorithmic Trading,6,0,4,False
+Quantitative Methods,Statistics & Probability,1,0,5,False
+Quantitative Methods,Financial Econometrics,6,0,5,False
+Quantitative Methods,Stochastic Calculus,8,0,4,False
+Quantitative Methods,Monte Carlo Simulation,8,0,4,False
+Quantitative Methods,GARCH Models,6,0,4,False
+Professional Skills,Technical Communication,9,0,4,False
+Professional Skills,Code Documentation,3,0,4,False
+Professional Skills,Git Version Control,2,0,4,False
+Professional Skills,Portfolio Development,9,0,5,False
